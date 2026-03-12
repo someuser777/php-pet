@@ -1,30 +1,48 @@
 <?php
-function render_posts() {
+function render_posts($id_prefix) {
   $posts_json = file_get_contents('./storage/posts.json');
   $posts_json_decoded = json_decode($posts_json);
 
-  function render_post($post) {
-    return "
-      <p>
-        <i>post id: $post->id</i>
-        <div><b>$post->title</b></div>
-        $post->content
-        <div>
-          $post->created
-          ".(
-            $post->updated 
-              ? ("
-                <i style=\"color: gray\">
-                  (upd: $post->updated)
-                </i>
-                ")
-              : ''
-          )."
-        </div>
-      </p>
-    ";
-  }
-
-  return implode('', array_map('render_post', $posts_json_decoded));
+  return implode(
+    '',
+    array_map(
+      function($post) use($id_prefix) {
+        $p_tag_unique_id = $id_prefix.$post->id;
+        
+        return "
+          <p id=\"$p_tag_unique_id\">
+            <i>post id: $post->id</i>
+            <div><b>$post->title</b></div>
+            $post->content
+            <div>
+              $post->created
+              ".(
+                $post->updated 
+                  ? ("
+                    <i style=\"color: gray\">
+                      (upd: $post->updated)
+                    </i>
+                    ")
+                  : ''
+              )."
+            </div>
+            <button
+              name=\"edit\"
+              data-postid=\"$post->id\"
+            >
+              Edit
+            </button>
+            <button
+              name=\"delete\"
+              data-postid=\"$post->id\"
+            >
+              Delete
+            </button>
+          </p>
+        ";
+      },
+      $posts_json_decoded,
+    ),
+  );
 }
 ?>

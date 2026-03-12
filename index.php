@@ -1,4 +1,6 @@
 <?php
+define('POST_ID_PREFIX', 'post_');
+
 $title = 'Some Title';
 
 require('header.php');
@@ -21,8 +23,22 @@ require_once('render_posts.php');
   </button>
 </form>
 <div id="posts">
-  <?=render_posts()?>
+  <?=render_posts(POST_ID_PREFIX)?>
 </div>
+<script>
+  const postsWrapper = document.querySelector('#posts');
+
+  postsWrapper.addEventListener(
+    'click',
+    function postsWrapperClickHandler(evt) {
+      if (evt.target.name === 'edit') {
+        const postId = evt.target.getAttribute('data-postid');
+      
+        window.location = `/edit_post_form.php?id=${postId}`;
+      }
+    },
+  );
+</script>
 <?php
 require('footer.php');
 ?>
