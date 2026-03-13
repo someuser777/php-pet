@@ -4,7 +4,7 @@ if (isset($_POST['submit']) && $_POST['content']) {
   $data_old_json = json_decode($data_old);
 
   $new_item = [
-    'id' => time(),
+    'id' => ''.time(),
     'title' => $_POST['title'] ?? '',
     'content' => $_POST['content'],
     'created' => date('Y-m-d H:i:s'),

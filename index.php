@@ -36,9 +36,15 @@ require_once('render_posts.php');
       
         window.location = `/edit_post_form.php?id=${postId}`;
       }
+      if (evt.target.name === 'delete') {
+        const postId = evt.target.getAttribute('data-postid');
+
+        fetch(`/delete_post.php?id=${postId}`).then(() => {
+          window.location = '';
+        });
+      }
     },
-  );
-</script>
+  );</script>
 <?php
 require('footer.php');
 ?>
