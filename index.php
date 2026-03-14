@@ -40,7 +40,7 @@ require_once('render_posts.php');
     </button>
   </form>
   <div id="posts">
-    <?=render_posts(POST_ID_PREFIX)?>
+    <?=render_posts($user, POST_ID_PREFIX)?>
   </div>
   <script>
     const postsWrapper = document.querySelector('#posts');

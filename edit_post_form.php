@@ -4,8 +4,6 @@ if (!$_COOKIE['user']) {
   exit;
 }
 
-require('start.php');
-
 $post_id = $_GET['id'];
 
 $posts_data = file_get_contents('storage/posts.json');
@@ -17,6 +15,8 @@ $editing_post = array_find(
     return $post->id === $post_id;
   },
 );
+
+require('start.php');
 ?>
 <div class="header">
   <div class="header__logo">logo</div>
@@ -34,6 +34,11 @@ $editing_post = array_find(
       type="hidden"
       name="id"
       value="<?=$editing_post->id?>"
+    />
+    <input
+      type="hidden"
+      name="user_id"
+      value="<?=$editing_post->user_id?>"
     />
     <input
       type="hidden"

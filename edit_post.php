@@ -2,6 +2,7 @@
 if (isset($_POST['submit'])) {
   $editing_item = [
     'id' => $_POST['id'],
+    'user_id' => $_POST['user_id'],
     'title' => $_POST['title'],
     'content' => $_POST['content'],
     'created' => $_POST['created'],

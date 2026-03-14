@@ -1,7 +1,18 @@
 <?php
-function render_posts($id_prefix) {
-  $posts_json = file_get_contents('./storage/posts.json');
+function render_posts($user, $id_prefix) {
+  $posts_json = file_get_contents('storage/posts.json');
   $posts_json_decoded = json_decode($posts_json);
+
+  $posts_json_decoded_filtered = array_filter(
+    $posts_json_decoded,
+    function ($post) use ($user) {
+      return $post->user_id === $user->id;
+    },
+  );
+
+  if (!count($posts_json_decoded_filtered)) {
+    return 'empty';
+  }
 
   return implode(
     '',
@@ -41,7 +52,7 @@ function render_posts($id_prefix) {
           </p>
         ";
       },
-      $posts_json_decoded,
+      $posts_json_decoded_filtered,
     ),
   );
 }
