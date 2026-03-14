@@ -1,6 +1,4 @@
 <?php
-require('start.php');
-
 if (isset($_POST['submit'])) {
   $users_data = file_get_contents('storage/users.json');
   $users_data_json = json_decode($users_data);
@@ -20,6 +18,8 @@ if (isset($_POST['submit'])) {
   
   exit;
 }
+
+require('start.php');
 ?>
 <main class="main_content">
   <h1>Sign in</h1>
@@ -35,6 +35,7 @@ if (isset($_POST['submit'])) {
     <br />
     <button name="submit" value="submit">Submit</button>
   </form>
+  <a href="/sign_up.php">May be sign up?</a>
 </main>
 <?php
 require('end.php');
