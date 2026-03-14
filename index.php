@@ -17,6 +17,12 @@ require_once('render_posts.php');
   <div class="header__logo">logo</div>
   <div class="header__user">
     <span><?=$user->name?></span>
+    <button
+      <?=$user->role === 'admin' ? '' : 'style="display: none"'?>
+      onclick="window.location = '/admin.php'"
+    >
+      Admin Panel
+    </button>
     <button onclick="window.location = '/sign_out.php'">
       Sign out
     </button>
