@@ -30,6 +30,16 @@
           font-size: 32px;
         }
       }
+      .table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .th, .td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: left;
+      }
     </style>
   </head>
   <body>
