@@ -4,6 +4,13 @@ if (!$_COOKIE['user']) {
   exit;
 }
 
+$user_cookie = json_decode($_COOKIE['user']);
+
+if ($user_cookie->role !== 'admin') {
+  header('Location: /sign_in.php');
+  exit;
+}
+
 $users_data = file_get_contents('storage/users.json');
 $users_json = json_decode($users_data);
 

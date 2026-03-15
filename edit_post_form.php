@@ -4,6 +4,8 @@ if (!$_COOKIE['user']) {
   exit;
 }
 
+$user = json_decode($_COOKIE['user']);
+
 $post_id = $_GET['id'];
 
 $posts_data = file_get_contents('storage/posts.json');
@@ -22,10 +24,17 @@ require('start.php');
   <div class="header__logo">logo</div>
   <div class="header__user">
     <span><?=$user->name?></span>
+    <button
+      <?=$user->role === 'admin' ? '' : 'style="display: none"'?>
+      onclick="window.location = '/admin.php'"
+    >
+      Admin Panel
+    </button>
     <button onclick="window.location = '/sign_out.php'">
       Sign out
     </button>
   </div>
+</div>
 </div>
 <main class="main_content">
   <h2>Edit post <?=$editing_post->id?>:</h1>
