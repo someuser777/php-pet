@@ -57,7 +57,10 @@ require('start.php');
               <td class=\"td\">$user->password</td>
               <td class=\"td\">$user->role</td>
               <td class=\"td\">
-                <button onclick=\"$btn_click\">
+                <button
+                  data-testid=\"delete_user_$user->name\"
+                  onclick=\"$btn_click\"
+                >
                   Delete
                 </button>
               </td>
@@ -95,7 +98,10 @@ require('start.php');
               <td class=\"td\">$post->created</td>
               <td class=\"td\">$post->updated</td>
               <td class=\"td\">
-                <button onclick=\"$btn_click\">
+                <button
+                  data-testid=\"delete_post_$post->id\"
+                  onclick=\"$btn_click\"
+                >
                   Delete
                 </button>
               </td>

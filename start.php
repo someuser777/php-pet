@@ -30,6 +30,12 @@
           font-size: 32px;
         }
       }
+      .post {
+        padding: 8px 0;
+      }
+      .post_id {
+        padding: 6px 0;
+      }
       .table {
         border: 1px solid black;
         border-collapse: collapse;

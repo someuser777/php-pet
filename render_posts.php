@@ -21,10 +21,14 @@ function render_posts($user, $id_prefix) {
         $p_tag_unique_id = $id_prefix.$post->id;
         
         return "
-          <p id=\"$p_tag_unique_id\">
-            <i>post id: $post->id</i>
-            <div><b>$post->title</b></div>
-            $post->content
+          <div class=\"post\" id=\"$p_tag_unique_id\">
+            <div class=\"post_id\">
+              <i>post id: <span data-testid=\"post_id\">$post->id</span></i>
+            </div>
+            <div>
+              <b data-testid=\"post_title\">$post->title</b>
+            </div>
+            <div data-testid=\"post_content\">$post->content</div>
             <div>
               $post->created
               ".(
@@ -49,7 +53,7 @@ function render_posts($user, $id_prefix) {
             >
               Delete
             </button>
-          </p>
+          </div>
         ";
       },
       $posts_json_decoded_filtered,

@@ -5,3 +5,6 @@
 - [Sign in](/sign_in.php)
 - [Sign up](/sign_up.php)
 - [Admin Panel](/admin.php)
+
+## Additional info
+- There are [tests](https://github.com/daniilmaikovskiy/php-pet-tests) for this project

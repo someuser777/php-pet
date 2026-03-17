@@ -1,14 +1,1 @@
-[
-  {
-    "id": "1",
-    "name": "admin",
-    "password": "admin",
-    "role": "admin"
-  },
-  {
-    "id": "2",
-    "name": "Some_user",
-    "password": "1234",
-    "role": "customer"
-  }
-]
+[{"id":"1","name":"admin","password":"admin","role":"admin"},{"id":"2","name":"Some_user","password":"1234","role":"customer"}]
