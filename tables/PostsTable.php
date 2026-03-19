@@ -26,7 +26,7 @@ function PostsTable($posts) {
     $posts,
   ));
 
-  echo "
+  return "
   <h2>Posts Table:</h2>
   <table class=\"table\">
     <tr>

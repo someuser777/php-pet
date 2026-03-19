@@ -26,7 +26,7 @@ function UsersTable($users) {
     $users,
   ));
 
-  echo "
+  return "
   <h2>Users Table:</h2>
   <table class=\"table\">
     <tr>
