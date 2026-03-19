@@ -1,0 +1,14 @@
+<?php
+function StartComponent($title) {
+  return "
+  <!DOCTYPE html>
+
+  <html>
+    <head>
+      <title>$title</title>
+      <link rel=\"stylesheet\" href=\"/css/main.css\">
+    </head>
+    <body>
+  ";
+}
+?>
