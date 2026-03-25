@@ -8,3 +8,13 @@
 
 ## Additional info
 - There are [tests](https://github.com/daniilmaikovskiy/php-pet-tests) for this project
+
+## how to start
+
+1. docker build -t php-pet .
+2. docker run -d --name='php-pet-container' -p 80:80 php-pet
+3. check [localhost](http://localhost)
+
+## logs
+
+docker exec php-pet-container tail -f /var/log/apache2/error.log
