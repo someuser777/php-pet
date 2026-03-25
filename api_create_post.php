@@ -1,5 +1,6 @@
 <?php
 require_once('settings.php');
+require_once('utils/polyfills.php');
 require_once('utils/get_posts.php');
 require_once('utils/set_posts.php');
 require_once('utils/get_cookie_user.php');

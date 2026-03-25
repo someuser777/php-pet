@@ -1,5 +1,6 @@
 <?php
 require_once('settings.php');
+require_once('utils/polyfills.php');
 require_once('components/StartComponent.php');
 require_once('components/EndComponent.php');
 require_once('forms/SignUpForm.php');
