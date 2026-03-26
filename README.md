@@ -12,7 +12,7 @@
 ## how to start
 
 1. docker build -t php-pet .
-2. docker run -d --name='php-pet-container' -p 80:80 php-pet
+2. docker run --rm -d --name='php-pet-container' -p 80:80 php-pet
 3. check [localhost](http://localhost)
 
 ## logs
