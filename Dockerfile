@@ -9,6 +9,8 @@ RUN rm -f /var/www/localhost/htdocs/index.html && echo "ServerName localhost" >>
 
 COPY . /var/www/localhost/htdocs/
 
+RUN chmod -R 777 /var/www/localhost/htdocs
+
 EXPOSE 80
 
 CMD ["httpd", "-D", "FOREGROUND"]
