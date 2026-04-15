@@ -11,10 +11,5 @@
 
 ## how to start
 
-1. docker build -t php-pet .
-2. docker run --rm -d --name='php-pet-container' -p 80:80 php-pet
-3. check [localhost](http://localhost)
-
-## logs
-
-docker exec php-pet-container tail -f /var/log/apache2/error.log
+1. docker compose up -d --build
+2. check [localhost](http://localhost)
